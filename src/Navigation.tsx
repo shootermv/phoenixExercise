@@ -1,42 +1,55 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
-
+import {useNavigation, RouteProp} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Platform, Pressable, Text, View} from 'react-native';
-
+import {Platform, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+
 import ContactMeScreen from './Pages/ContactMeScreen';
 import HomeScreen from './Pages/HomeScreen';
 import ProjectsScreen from './Pages/ProjectsScreen';
 
-const Tab = createBottomTabNavigator();
+type RootStackParamList = {
+  Home: undefined;
+  Projects: undefined;
+  'Contact Me': undefined;
+};
+
+type TabBarIconProps = {
+  focused: boolean;
+  color: string;
+  size: number;
+};
+
+const Tab = createBottomTabNavigator<RootStackParamList>();
+
+const HeaderLeft = ({route}: {route: RouteProp<RootStackParamList>}) => {
+  const navigation = useNavigation();
+  return (
+    <Pressable
+      onPress={() => route.name !== 'Home' && navigation.goBack()}
+      accessible
+      accessibilityRole="button"
+      accessibilityLabel="Back">
+      <Icon
+        size={30}
+        name={
+          Platform.OS === 'android'
+            ? 'arrow-back-sharp'
+            : 'arrow-back-circle-sharp'
+        }
+      />
+    </Pressable>
+  );
+};
 
 const TabNavigator = () => (
   <Tab.Navigator
-    backBehavior={'history'}
+    backBehavior="history"
     screenOptions={({route}) => ({
       headerShown: true,
-      headerLeft: () => {
-        const navigation = useNavigation();
-        return (
-          <Pressable
-            onPress={() => route.name !== 'Home' && navigation.goBack()}
-            accessible
-            accessibilityRole="button"
-            accessibilityLabel="Back">
-            <Icon
-              size={30}
-              name={
-                Platform.OS === 'android'
-                  ? 'arrow-back-sharp'
-                  : 'arrow-back-circle-sharp'
-              }
-            />
-          </Pressable>
-        );
-      },
-      tabBarIcon: ({focused, color, size}) => {
-        let iconName;
+      headerLeft: () => <HeaderLeft route={route} />,
+      tabBarIcon: ({focused, color, size}: TabBarIconProps) => {
+        let iconName: string;
 
         if (route.name === 'Home') {
           iconName = focused ? 'home' : 'home-outline';
