@@ -18,6 +18,7 @@ type TabBarIconProps = {
   focused: boolean;
   color: string;
   size: number;
+  route: RouteProp<RootStackParamList>;
 };
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
@@ -42,25 +43,29 @@ const HeaderLeft = ({route}: {route: RouteProp<RootStackParamList>}) => {
   );
 };
 
+const TabBarIcon = ({focused, color, size, route}: TabBarIconProps) => {
+  let iconName: string = '';
+
+  if (route.name === 'Home') {
+    iconName = focused ? 'home' : 'home-outline';
+  } else if (route.name === 'Projects') {
+    iconName = focused ? 'settings' : 'settings-outline';
+  } else if (route.name === 'Contact Me') {
+    iconName = focused ? 'person' : 'person-outline';
+  }
+
+  return <Icon name={iconName} size={size} color={color} />;
+};
+
 const TabNavigator = () => (
   <Tab.Navigator
     backBehavior="history"
     screenOptions={({route}) => ({
       headerShown: true,
       headerLeft: () => <HeaderLeft route={route} />,
-      tabBarIcon: ({focused, color, size}: TabBarIconProps) => {
-        let iconName: string;
-
-        if (route.name === 'Home') {
-          iconName = focused ? 'home' : 'home-outline';
-        } else if (route.name === 'Projects') {
-          iconName = focused ? 'settings' : 'settings-outline';
-        } else if (route.name === 'Contact Me') {
-          iconName = focused ? 'person' : 'person-outline';
-        }
-
-        return <Icon name={iconName} size={size} color={color} />;
-      },
+      tabBarIcon: ({focused, color, size}) => (
+        <TabBarIcon {...{focused, color, size, route}} />
+      ),
       tabBarActiveTintColor: 'tomato',
       tabBarInactiveTintColor: 'gray',
     })}>
