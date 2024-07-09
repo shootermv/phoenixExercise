@@ -5,26 +5,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Platform, Pressable, Text, View} from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import ContactMeScreen from './Pages/ContactMeScreen';
+import HomeScreen from './Pages/HomeScreen';
+import ProjectsScreen from './Pages/ProjectsScreen';
 
 const Tab = createBottomTabNavigator();
-
-const HomeScreen = () => (
-  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>Home Screen</Text>
-  </View>
-);
-
-const ProjectsScreen = () => (
-  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>Projects Screen</Text>
-  </View>
-);
-
-const ContactMeScreen = () => (
-  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>Contact Me Screen</Text>
-  </View>
-);
 
 const TabNavigator = () => (
   <Tab.Navigator
