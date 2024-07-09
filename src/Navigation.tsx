@@ -1,7 +1,5 @@
 import React from 'react';
-import {RouteProp} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
 import ContactMeScreen from './Pages/ContactMe/ContactMeScreen';
 import HomeScreen from './Pages/HomeScreen';
 import ProjectsScreen from './Pages/ProjectsScreen';
