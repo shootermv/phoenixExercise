@@ -10,12 +10,17 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import TabNavigator from './Navigation';
 
-function App(): React.JSX.Element {
+import {Provider} from 'react-redux';
+import store from './store';
+
+const App: React.FC = () => {
   return (
-    <NavigationContainer>
-      <TabNavigator />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </Provider>
   );
-}
+};
 
 export default App;

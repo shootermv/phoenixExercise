@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Platform, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import ContactMeScreen from './Pages/ContactMeScreen';
+import ContactMeScreen from './Pages/ContactMe/ContactMeScreen';
 import HomeScreen from './Pages/HomeScreen';
 import ProjectsScreen from './Pages/ProjectsScreen';
 

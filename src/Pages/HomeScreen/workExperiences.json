@@ -1,0 +1,36 @@
+{
+  "workExperiences": [
+    {
+      "jobTitle": "Software Engineer",
+      "company": "Tech Solutions Inc.",
+      "duration": "June 2018 - Present",
+      "location": "San Francisco, CA",
+      "description": "Developing and maintaining web applications using React and Node.js. Collaborating with cross-functional teams to deliver high-quality software solutions. Implemented various features and optimizations, resulting in a 15% increase in user engagement.",
+      "companyLogo": "https://example.com/logos/tech-solutions-inc.png"
+    },
+    {
+      "jobTitle": "Frontend Developer",
+      "company": "Creative Minds",
+      "duration": "January 2016 - May 2018",
+      "location": "New York, NY",
+      "description": "Designed and implemented responsive user interfaces using HTML, CSS, and JavaScript. Worked closely with designers and backend developers to ensure seamless integration. Improved page load times by optimizing images and reducing redundant code.",
+      "companyLogo": "https://example.com/logos/creative-minds.png"
+    },
+    {
+      "jobTitle": "Junior Web Developer",
+      "company": "Innovative Web Solutions",
+      "duration": "June 2014 - December 2015",
+      "location": "Austin, TX",
+      "description": "Assisted in the development of web applications and websites. Conducted testing and debugging to ensure optimal performance and user experience. Created and maintained documentation for various projects.",
+      "companyLogo": "https://example.com/logos/innovative-web-solutions.png"
+    },
+    {
+      "jobTitle": "Intern",
+      "company": "Startup Hub",
+      "duration": "June 2013 - May 2014",
+      "location": "Seattle, WA",
+      "description": "Supported the development team in creating and testing new features. Gained hands-on experience in web development technologies and methodologies. Contributed to the improvement of internal tools and processes.",
+      "companyLogo": "https://example.com/logos/startup-hub.png"
+    }
+  ]
+}
