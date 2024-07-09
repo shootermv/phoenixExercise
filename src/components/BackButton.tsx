@@ -2,12 +2,7 @@ import React from 'react';
 import {useNavigation, RouteProp} from '@react-navigation/native';
 import {Platform, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
-type RootStackParamList = {
-  Home: undefined;
-  Projects: undefined;
-  'Contact Me': undefined;
-};
+import RootStackParamList from '../Models/RootStackParamList';
 
 const BackButton = ({route}: {route: RouteProp<RootStackParamList>}) => {
   const navigation = useNavigation();

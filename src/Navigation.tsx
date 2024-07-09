@@ -6,6 +6,7 @@ import ContactMeScreen from './Pages/ContactMe/ContactMeScreen';
 import HomeScreen from './Pages/HomeScreen';
 import ProjectsScreen from './Pages/ProjectsScreen';
 import BackButton from './components/BackButton';
+import TabBarIcon from './components/TabBarIcons';
 
 type RootStackParamList = {
   Home: undefined;
@@ -13,28 +14,7 @@ type RootStackParamList = {
   'Contact Me': undefined;
 };
 
-type TabBarIconProps = {
-  focused: boolean;
-  color: string;
-  size: number;
-  route: RouteProp<RootStackParamList>;
-};
-
 const Tab = createBottomTabNavigator<RootStackParamList>();
-
-const TabBarIcon = ({focused, color, size, route}: TabBarIconProps) => {
-  let iconName: string = '';
-
-  if (route.name === 'Home') {
-    iconName = focused ? 'home' : 'home-outline';
-  } else if (route.name === 'Projects') {
-    iconName = focused ? 'settings' : 'settings-outline';
-  } else if (route.name === 'Contact Me') {
-    iconName = focused ? 'person' : 'person-outline';
-  }
-
-  return <Icon name={iconName} size={size} color={color} />;
-};
 
 const TabNavigator = () => (
   <Tab.Navigator
