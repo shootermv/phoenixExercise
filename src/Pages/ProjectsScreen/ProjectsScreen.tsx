@@ -1,8 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import FrontendProjects from './FrontEndProjects';
 const ProjectsScreen: React.FC = () => (
   <View style={styles.container}>
-    <Text style={styles.text}>Projects Screen</Text>
+    <FrontendProjects />
   </View>
 );
 
