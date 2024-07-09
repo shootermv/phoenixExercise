@@ -1,12 +1,11 @@
 import React from 'react';
-import {useNavigation, RouteProp} from '@react-navigation/native';
+import {RouteProp} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Platform, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import ContactMeScreen from './Pages/ContactMe/ContactMeScreen';
 import HomeScreen from './Pages/HomeScreen';
 import ProjectsScreen from './Pages/ProjectsScreen';
+import BackButton from './components/BackButton';
 
 type RootStackParamList = {
   Home: undefined;
@@ -22,26 +21,6 @@ type TabBarIconProps = {
 };
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
-
-const HeaderLeft = ({route}: {route: RouteProp<RootStackParamList>}) => {
-  const navigation = useNavigation();
-  return (
-    <Pressable
-      onPress={() => route.name !== 'Home' && navigation.goBack()}
-      accessible
-      accessibilityRole="button"
-      accessibilityLabel="Back">
-      <Icon
-        size={30}
-        name={
-          Platform.OS === 'android'
-            ? 'arrow-back-sharp'
-            : 'arrow-back-circle-sharp'
-        }
-      />
-    </Pressable>
-  );
-};
 
 const TabBarIcon = ({focused, color, size, route}: TabBarIconProps) => {
   let iconName: string = '';
@@ -62,7 +41,7 @@ const TabNavigator = () => (
     backBehavior="history"
     screenOptions={({route}) => ({
       headerShown: true,
-      headerLeft: () => <HeaderLeft route={route} />,
+      BackButton: () => <BackButton route={route} />,
       tabBarIcon: ({focused, color, size}) => (
         <TabBarIcon {...{focused, color, size, route}} />
       ),
