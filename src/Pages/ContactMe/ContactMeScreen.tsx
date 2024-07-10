@@ -33,7 +33,7 @@ const ContactMeScreen: React.FC = () => {
   };
 
   return (
-    <View style={tw`flex-1 justify-center items-center p-5 bg-sky-900`}>
+    <View style={tw`flex-1 justify-center items-center p-5 bg-slate-950`}>
       <Text style={tw`text-xl text-white font-bold mb-5`}>
         Enter your phone number
       </Text>

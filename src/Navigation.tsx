@@ -19,14 +19,16 @@ const TabNavigator = () => (
     backBehavior="history"
     screenOptions={({route}) => ({
       headerStyle: {
-        backgroundColor: '#172554',
+        backgroundColor: `rgb(2 6 23)`,
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#60a5fa',
       tabBarStyle: {
-        backgroundColor: '#172554',
+        backgroundColor: 'rgb(2 6 23)',
+        borderTopWidth: 0,
+        borderTopColor: 'transparent',
       },
-      tabBarActiveTintColor: 'white',
-      tabBarInactiveTintColor: '#60a5fa',
+      tabBarActiveTintColor: '#60a5fa',
+      tabBarInactiveTintColor: 'gray',
       headerShown: true,
       headerLeft: () => <BackButton route={route} />,
       tabBarIcon: ({focused, color, size}) => (
