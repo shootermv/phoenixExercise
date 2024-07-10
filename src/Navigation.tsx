@@ -19,7 +19,7 @@ const TabNavigator = () => (
     backBehavior="history"
     screenOptions={({route}) => ({
       headerShown: true,
-      BackButton: () => <BackButton route={route} />,
+      headerLeft: () => <BackButton route={route} />,
       tabBarIcon: ({focused, color, size}) => (
         <TabBarIcon {...{focused, color, size, route}} />
       ),
