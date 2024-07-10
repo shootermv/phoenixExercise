@@ -1,9 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
 import phoneReducer from './phoneSlice';
-
+import jobExperiencesReducer from './worksSlice';
 const store = configureStore({
   reducer: {
     phone: phoneReducer,
+    jobExperiences: jobExperiencesReducer,
   },
 });
 
