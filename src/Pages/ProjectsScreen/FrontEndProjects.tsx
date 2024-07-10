@@ -18,7 +18,7 @@ const FrontendProjects = () => {
       keyExtractor={item => item.projectName}
       horizontal
       renderItem={({item}) => (
-        <View style={tw`mb-5 p-5 bg-sky-900 rounded-lg shadow w-115 mr-6`}>
+        <View style={tw`mb-5 p-5 bg-sky-900 rounded-lg shadow w-90 mr-6`}>
           <Image
             source={{uri: item.screenshot}}
             style={tw`w-full h-50 rounded-lg`}
@@ -28,11 +28,11 @@ const FrontendProjects = () => {
           </Text>
           <Text style={tw`text-base text-white mb-3`}>{item.description}</Text>
           <Text style={tw`text-sm text-white mb-3`}>Technologies:</Text>
-          <Text style={tw`text-sm text-white mb-3`}>
+          <View style={tw`mb-3 flex flex-row flex-wrap`}>
             {item.technologies.map(tech => (
               <Badge key={tech}>{tech}</Badge>
             ))}
-          </Text>
+          </View>
           <Text style={tw`text-sm text-white mb-3`}>
             Duration: {item.duration}
           </Text>
