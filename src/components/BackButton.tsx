@@ -6,7 +6,9 @@ import RootStackParamList from '../Models/RootStackParamList';
 
 const BackButton = ({route}: {route: RouteProp<RootStackParamList>}) => {
   const navigation = useNavigation();
-  if (route.name === 'Home') return <></>;
+  if (route.name === 'Home') {
+    return <></>;
+  }
   return (
     <Pressable
       onPress={() => route.name !== 'Home' && navigation.goBack()}

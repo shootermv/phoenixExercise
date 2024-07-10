@@ -5,7 +5,7 @@ import WorkExperiences from './WorkExperiences';
 import Welcome from './Welcome';
 
 const HomeScreen: React.FC = () => (
-  <View style={tw`flex-1 justify-center items-center bg-slate-950`}>
+  <View style={tw`flex-1 justify-center items-center bg-slate-950 px-4`}>
     <Welcome />
     <WorkExperiences />
   </View>
