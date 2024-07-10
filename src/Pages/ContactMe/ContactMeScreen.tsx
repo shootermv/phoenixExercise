@@ -8,6 +8,7 @@ import {
   setModalVisible,
   validatePhoneNumber,
 } from '../../store/phoneSlice';
+import LinearGradient from 'react-native-linear-gradient';
 
 const ContactMeScreen: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -33,13 +34,20 @@ const ContactMeScreen: React.FC = () => {
   };
 
   return (
-    <View style={tw`flex-1 justify-center items-center p-5 bg-slate-950`}>
-      <Text style={tw`text-xl text-white font-bold mb-5`}>
+    <LinearGradient
+      colors={['#4c669f', '#3b5998', 'rgb(2 6 23)']}
+      style={tw`flex-1 justify-center items-start p-5 `}>
+      <Text style={tw`text-2xl text-white font-bold mb-5`}>Need Help?</Text>
+      <Text style={tw`text-3xl text-white font-bold mb-5`}>
+        Feel free to contact me!
+      </Text>
+      <Text style={tw`text-sm text-white font-bold mb-5`}>
         Enter your phone number
       </Text>
       <TextInput
-        style={tw`border border-gray-400 rounded p-2 w-full mb-2`}
+        style={tw`border border-gray-400 rounded p-2 w-full mb-6`}
         placeholder="Phone Number"
+        placeholderTextColor="#fff"
         keyboardType="phone-pad"
         value={phoneNumber}
         onChangeText={text => dispatch(setPhoneNumber(text))}
@@ -71,7 +79,7 @@ const ContactMeScreen: React.FC = () => {
           </View>
         </View>
       </Modal>
-    </View>
+    </LinearGradient>
   );
 };
 
