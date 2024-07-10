@@ -17,17 +17,19 @@ const FrontendProjects = () => {
       keyExtractor={item => item.projectName}
       horizontal
       renderItem={({item}) => (
-        <View style={tw`mb-5 p-5 bg-white rounded-lg shadow`}>
+        <View style={tw`mb-5 p-5 bg-sky-900 rounded-lg shadow w-115 mr-6`}>
           <Image
             source={{uri: item.screenshot}}
             style={tw`w-full h-50 rounded-lg`}
           />
-          <Text style={tw`text-lg font-bold my-3`}>{item.projectName}</Text>
-          <Text style={tw`text-base mb-3`}>{item.description}</Text>
-          <Text style={tw`text-sm text-gray-600 mb-3`}>
+          <Text style={tw`text-lg text-white font-bold my-3`}>
+            {item.projectName}
+          </Text>
+          <Text style={tw`text-base text-white mb-3`}>{item.description}</Text>
+          <Text style={tw`text-sm text-white mb-3`}>
             Technologies: {item.technologies.join(', ')}
           </Text>
-          <Text style={tw`text-sm text-gray-600 mb-3`}>
+          <Text style={tw`text-sm text-white mb-3`}>
             Duration: {item.duration}
           </Text>
 

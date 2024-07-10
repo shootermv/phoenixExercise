@@ -18,13 +18,20 @@ const TabNavigator = () => (
   <Tab.Navigator
     backBehavior="history"
     screenOptions={({route}) => ({
+      headerStyle: {
+        backgroundColor: '#172554',
+      },
+      headerTintColor: '#fff',
+      tabBarStyle: {
+        backgroundColor: '#172554',
+      },
+      tabBarActiveTintColor: 'white',
+      tabBarInactiveTintColor: '#60a5fa',
       headerShown: true,
       headerLeft: () => <BackButton route={route} />,
       tabBarIcon: ({focused, color, size}) => (
         <TabBarIcon {...{focused, color, size, route}} />
       ),
-      tabBarActiveTintColor: 'tomato',
-      tabBarInactiveTintColor: 'gray',
     })}>
     <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Projects" component={ProjectsScreen} />

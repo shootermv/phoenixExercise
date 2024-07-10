@@ -14,6 +14,7 @@ const BackButton = ({route}: {route: RouteProp<RootStackParamList>}) => {
       accessibilityRole="button"
       accessibilityLabel="Back">
       <Icon
+        style={{color: '#fff'}}
         size={30}
         name={
           Platform.OS === 'android'

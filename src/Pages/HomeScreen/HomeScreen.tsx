@@ -1,19 +1,11 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View} from 'react-native';
 import WorkExperiences from './WorkExperiences';
-
+import tw from 'twrnc';
 const HomeScreen: React.FC = () => (
-  <View style={styles.container}>
+  <View style={tw`flex-1 justify-center items-center bg-sky-950`}>
     <WorkExperiences />
   </View>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default HomeScreen;
