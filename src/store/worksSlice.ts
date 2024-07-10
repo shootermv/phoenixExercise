@@ -1,16 +1,9 @@
 // src/features/jobExperiences/jobExperiencesSlice.ts
 import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import axios from 'axios';
+import JobExperience from '../Models/JobExperience';
 
 // Define a type for the slice state
-interface JobExperience {
-  jobTitle: string;
-  company: string;
-  duration: string;
-  location: string;
-  description: string;
-  companyLogo: string;
-}
 
 interface JobExperiencesState {
   jobExperiences: JobExperience[];

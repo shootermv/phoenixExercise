@@ -36,7 +36,7 @@ const WorkExperiences: React.FC = () => {
 
   if (status === 'failed') {
     return (
-      <Text style={tw`mb-5 p-5 bg-red-900 rounded-lg shadow w-115 mr-6`}>
+      <Text style={tw`mb-5 p-5 bg-red-900 rounded-lg shadow w-90 mr-6`}>
         Error: {error}
       </Text>
     );
@@ -48,7 +48,7 @@ const WorkExperiences: React.FC = () => {
       keyExtractor={item => item.jobTitle}
       horizontal
       renderItem={({item}) => (
-        <View style={tw`mb-5 p-5 bg-sky-900 rounded-lg shadow w-115 mr-6`}>
+        <View style={tw`mb-5 p-5 bg-sky-900 rounded-lg shadow w-90 mr-6`}>
           <Text style={tw`text-lg font-bold my-3 text-white`}>
             {item.company}
           </Text>
