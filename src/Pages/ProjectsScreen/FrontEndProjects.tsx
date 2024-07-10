@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import frontendProjects from './frontendProjects.json';
 import tw from 'twrnc';
+import Badge from '../../components/Badge';
 
 const FrontendProjects = () => {
   return (
@@ -26,15 +27,20 @@ const FrontendProjects = () => {
             {item.projectName}
           </Text>
           <Text style={tw`text-base text-white mb-3`}>{item.description}</Text>
+          <Text style={tw`text-sm text-white mb-3`}>Technologies:</Text>
           <Text style={tw`text-sm text-white mb-3`}>
-            Technologies: {item.technologies.join(', ')}
+            {item.technologies.map(tech => (
+              <Badge key={tech}>{tech}</Badge>
+            ))}
           </Text>
           <Text style={tw`text-sm text-white mb-3`}>
             Duration: {item.duration}
           </Text>
 
-          <TouchableOpacity onPress={() => Linking.openURL(item.projectLink)}>
-            <Text style={tw`text-sm text-blue-600`}>Project Link:</Text>
+          <TouchableOpacity
+            style={tw`bg-slate-900 p-2 rounded-lg w-35`}
+            onPress={() => Linking.openURL(item.projectLink)}>
+            <Text style={tw`text-sm text-white`}>Project Link</Text>
           </TouchableOpacity>
         </View>
       )}
